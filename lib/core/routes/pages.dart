@@ -6,6 +6,7 @@ import 'package:stylish_ecommerce_wc/view/Home/get_started_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/home_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/check_out_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/profile_screen.dart';
+import 'package:stylish_ecommerce_wc/view/Home/shop_screen.dart';
 import 'package:stylish_ecommerce_wc/view/auth/forgot_password_screen.dart';
 import 'package:stylish_ecommerce_wc/view/auth/onboarding_screen.dart';
 import 'package:stylish_ecommerce_wc/view/auth/sign_in_screen.dart';
@@ -57,6 +58,10 @@ class AppPages {
     GetPage(
       name: RoutesName.profileScreen,
       page: () => const ProfileScreen(),
+    ),
+    GetPage(
+      name: RoutesName.shopScreen,
+      page: () => const ShopScreen(),
     ),
   ];
 }

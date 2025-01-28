@@ -8,6 +8,7 @@ import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 import 'package:stylish_ecommerce_wc/core/utils/sized_box_extension.dart';
 
 class CommonTrendingProductScreen extends StatelessWidget {
+  final void Function()? onTap;
   final double? height;
   final int? imagesIndex;
   final double? width;
@@ -33,121 +34,125 @@ class CommonTrendingProductScreen extends StatelessWidget {
       this.countItems,
       this.rating,
       this.imagesIndex,
-      this.discountAndPrice});
+      this.discountAndPrice,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          color: AppColors.backgroundColors,
-          borderRadius: BorderRadius.circular(10.r),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.gray,
-              blurRadius: 1,
-              spreadRadius: 0,
-            )
-          ]),
-      child: Column(
-        children: [
-          imagesIndex!.isEven
-              ? Container(
-                  height: 200.h,
-                  width: 163.w,
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(5.r),
-                    image: DecorationImage(
-                      image: AssetImage(productImages!),
-                      fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+            color: AppColors.backgroundColors,
+            borderRadius: BorderRadius.circular(10.r),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.gray,
+                blurRadius: 1,
+                spreadRadius: 0,
+              )
+            ]),
+        child: Column(
+          children: [
+            imagesIndex!.isEven
+                ? Container(
+                    height: 200.h,
+                    width: 163.w,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(5.r),
+                      image: DecorationImage(
+                        image: AssetImage(productImages!),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  )
+                : Container(
+                    height: 146.h,
+                    width: 164.w,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(5.r),
+                      image: DecorationImage(
+                        image: AssetImage(productImages!),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                )
-              : Container(
-                  height: 146.h,
-                  width: 164.w,
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(5.r),
-                    image: DecorationImage(
-                      image: AssetImage(productImages!),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                4.height,
+                CommonText(
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.start,
+                  text: title ?? "Title",
+                  style: AppTextStyle.w500(color: AppColors.backColor, fontSize: 14.sp),
                 ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              4.height,
-              CommonText(
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.start,
-                text: title ?? "Title",
-                style: AppTextStyle.w500(color: AppColors.backColor, fontSize: 14.sp),
-              ),
-              4.height,
-              CommonText(
-                textAlign: TextAlign.start,
-                text: description ?? "",
-                style: AppTextStyle.w400(color: AppColors.backColor, fontSize: 10.sp),
-              ),
-              4.height,
-              CommonText(
-                text: "₹$discountPrice",
-                style: AppTextStyle.w400(color: AppColors.backColor, fontSize: 12.sp),
-              ),
-              4.height,
-              discountAndPrice != null
-                  ? Row(
-                      children: [
-                        CommonText(
-                          text: price ?? "",
-                          style: AppTextStyle.w400(
-                              color: AppColors.gray,
-                              fontSize: 10.sp,
-                              textDecoration: TextDecoration.lineThrough,
-                              decorationColor: AppColors.gray),
-                        ),
-                        4.width,
-                        CommonText(
-                          text: discount ?? "",
-                          style: AppTextStyle.w400(
-                            color: AppColors.offerTextColors,
-                            fontSize: 10.sp,
-                          ),
-                        ),
-                      ],
-                    )
-                  : const SizedBox(),
-              Row(
-                children: [
-                  rating ??
-                      Row(
+                4.height,
+                CommonText(
+                  textAlign: TextAlign.start,
+                  text: description ?? "",
+                  style: AppTextStyle.w400(color: AppColors.backColor, fontSize: 10.sp),
+                ),
+                4.height,
+                CommonText(
+                  text: "₹$discountPrice",
+                  style: AppTextStyle.w400(color: AppColors.backColor, fontSize: 12.sp),
+                ),
+                4.height,
+                discountAndPrice != null
+                    ? Row(
                         children: [
-                          Row(
-                            children: List.generate(
-                              4,
-                              (index) {
-                                return Row(
-                                  children: [
-                                    AppIcons.star,
-                                  ],
-                                );
-                              },
+                          CommonText(
+                            text: price ?? "",
+                            style: AppTextStyle.w400(
+                                color: AppColors.gray,
+                                fontSize: 10.sp,
+                                textDecoration: TextDecoration.lineThrough,
+                                decorationColor: AppColors.gray),
+                          ),
+                          4.width,
+                          CommonText(
+                            text: discount ?? "",
+                            style: AppTextStyle.w400(
+                              color: AppColors.offerTextColors,
+                              fontSize: 10.sp,
                             ),
                           ),
-                          AppIcons.star_half,
                         ],
-                      ),
-                  CommonText(
-                    text: countItems ?? " ",
-                    style: AppTextStyle.w400(fontSize: 10.sp, color: AppColors.gray),
-                  )
-                ],
-              )
-            ],
-          ).paddingSymmetric(horizontal: 10.w)
-        ],
+                      )
+                    : const SizedBox(),
+                Row(
+                  children: [
+                    rating ??
+                        Row(
+                          children: [
+                            Row(
+                              children: List.generate(
+                                4,
+                                (index) {
+                                  return Row(
+                                    children: [
+                                      AppIcons.star,
+                                    ],
+                                  );
+                                },
+                              ),
+                            ),
+                            AppIcons.star_half,
+                          ],
+                        ),
+                    CommonText(
+                      text: countItems ?? " ",
+                      style: AppTextStyle.w400(fontSize: 10.sp, color: AppColors.gray),
+                    )
+                  ],
+                )
+              ],
+            ).paddingSymmetric(horizontal: 10.w)
+          ],
+        ),
       ),
     );
   }

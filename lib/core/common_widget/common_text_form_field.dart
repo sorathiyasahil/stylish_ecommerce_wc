@@ -6,6 +6,7 @@ import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 class CommonTextFormField extends StatelessWidget {
   final TextEditingController controller;
   final Icon? prefixIcon;
+  final String? Function(String?)? validator;
   final Icon? suffixIcon;
   final Color? fillColor;
   final String? hintText;
@@ -21,17 +22,13 @@ class CommonTextFormField extends StatelessWidget {
       this.hintText,
       this.focusedBorderColors,
       this.enableBorderColors,
-      this.fillColor});
+      this.fillColor,
+      this.validator});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return "Enter Value";
-        }
-        return null;
-      },
+      validator: validator,
       onTap: onTap,
       style: AppTextStyle.w500(
         color: AppColors.hintTextColor,
@@ -49,18 +46,21 @@ class CommonTextFormField extends StatelessWidget {
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             borderSide: BorderSide(
                 color: focusedBorderColors ?? AppColors.textFieldBorderColor, width: 1.sp)),
         enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             borderSide: BorderSide(
                 color: enableBorderColors ?? AppColors.textFieldBorderColor, width: 1.sp)),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(
-            10,
+            10.r,
           ),
         ),
+        focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.r),
+            borderSide: BorderSide(color: AppColors.errorColor, width: 1.sp)),
       ),
     );
   }

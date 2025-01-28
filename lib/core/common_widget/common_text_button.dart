@@ -9,14 +9,14 @@ class CommonTextButton extends StatelessWidget {
   final void Function()? onPressed;
   final String? text;
   final TextStyle? textStyle;
-  final TextDecoration;
+  final textDecoration;
   final fontsize;
   final fixedSize;
 
   const CommonTextButton({
     super.key,
     this.onPressed,
-    this.TextDecoration,
+    this.textDecoration,
     this.text,
     this.textStyle,
     this.fontsize,
@@ -26,7 +26,7 @@ class CommonTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      style: TextButton.styleFrom(fixedSize: fixedSize ?? Size(100, 50)),
+      style: TextButton.styleFrom(fixedSize: fixedSize ?? const Size(100, 50)),
       onPressed: onPressed,
       child: CommonText(
           text: text ?? "",
@@ -34,7 +34,7 @@ class CommonTextButton extends StatelessWidget {
               AppTextStyle.w600(
                 fontSize: fontsize ?? 18.sp,
                 color: AppColors.onboardingButtonColor,
-                textDecoration: TextDecoration,
+                textDecoration: textDecoration,
               )),
     ).marginZero.paddingZero;
   }

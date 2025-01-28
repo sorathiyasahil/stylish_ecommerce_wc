@@ -62,7 +62,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                   CommonButton(
                     onTap: () {
                       Get.offAllNamed(
-                        RoutesName.homeScreen,
+                        RoutesName.bottomNavigationBar,
                       );
                     },
                     text: AppString.getStarted,

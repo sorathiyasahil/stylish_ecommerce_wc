@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 
 class CommonAuthButton extends StatelessWidget {
-  final String Img;
-  const CommonAuthButton({super.key, required this.Img});
+  final String img;
+  const CommonAuthButton({super.key, required this.img});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class CommonAuthButton extends StatelessWidget {
             color: AppColors.onboardingButtonColor,
             width: 1.w,
           ),
-          image: DecorationImage(image: AssetImage(Img))),
+          image: DecorationImage(image: AssetImage(img))),
     );
   }
 }

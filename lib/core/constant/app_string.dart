@@ -2,6 +2,7 @@ import 'package:stylish_ecommerce_wc/core/key/app_images_key.dart';
 import 'package:stylish_ecommerce_wc/view/Home/Product_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/check_out_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/profile_screen.dart';
+import 'package:stylish_ecommerce_wc/view/Home/shop_screen.dart';
 
 import '../../view/Home/home_screen.dart';
 
@@ -339,8 +340,8 @@ class AppString {
   static List screen = [
     const HomeScreen(),
     const ProductScreen(),
+    const ShopScreen(),
     const CheckOutScreen(),
-    const ProductScreen(),
     const ProfileScreen(),
   ];
 

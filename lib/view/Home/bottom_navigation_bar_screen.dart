@@ -56,9 +56,9 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
                 ),
               ),
               BottomNavigationBarItem(
-                label: "Wishlist",
+                label: "Search",
                 icon: Icon(
-                  Icons.favorite_border,
+                  Icons.search,
                   color: _selectedIndex == 1 ? AppColors.selectedItemColor : AppColors.backColor,
                 ),
               ),
@@ -67,9 +67,9 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
                 icon: Icon(null),
               ),
               BottomNavigationBarItem(
-                label: "Search",
+                label: "Wishlist",
                 icon: Icon(
-                  Icons.search,
+                  Icons.favorite_border,
                   color: _selectedIndex == 3 ? AppColors.selectedItemColor : AppColors.backColor,
                 ),
               ),

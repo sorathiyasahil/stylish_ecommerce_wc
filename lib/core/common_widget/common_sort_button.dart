@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
-
-import '../constant/app_icons.dart';
 import 'common_text.dart';
 
 class CommonSortButton extends StatelessWidget {

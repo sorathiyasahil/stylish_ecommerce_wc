@@ -27,7 +27,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Align(
         alignment: Alignment.center,
         child: Image(
-          image: AssetImage(
+          image: const AssetImage(
             AppImagesKey.appLogo,
           ),
           height: 31.03.h,

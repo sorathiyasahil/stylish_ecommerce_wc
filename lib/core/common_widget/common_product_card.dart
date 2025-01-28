@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
-import 'package:stylish_ecommerce_wc/core/key/app_images_key.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 import 'package:stylish_ecommerce_wc/core/utils/sized_box_extension.dart';
 
@@ -74,13 +73,13 @@ class CommonProductCard extends StatelessWidget {
             ),
           ),
           CommonText(
-            text: "₹${discountPrice}",
+            text: "$discountPrice",
             style: AppTextStyle.w400(color: AppColors.backColor, fontSize: 10.sp),
           ),
           Row(
             children: [
               CommonText(
-                text: "₹${price}",
+                text: "$price",
                 style: AppTextStyle.w400(
                     color: AppColors.gray,
                     fontSize: 10.sp,

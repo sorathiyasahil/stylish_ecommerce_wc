@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
-import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 import 'package:stylish_ecommerce_wc/core/utils/sized_box_extension.dart';
@@ -42,7 +40,7 @@ class CommonCallToActionButton extends StatelessWidget {
               8.height,
               Row(
                 children: [
-                  icon ?? Icon(Icons.add),
+                  icon ?? const Icon(Icons.add),
                   4.width,
                   CommonText(
                     text: subtitle ?? "",

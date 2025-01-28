@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColors.homeBGColors,
-        appBar: CommonAppBar(),
+        appBar: const CommonAppBar(),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -115,7 +115,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPageChanged: (value) {
                         setState(() {
                           pageCount = value;
-                          print("=========>${pageCount}");
                         });
                       },
                       itemBuilder: (context, index) {
@@ -214,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image(
-                      image: AssetImage(AppImagesKey.specialOffer),
+                      image: const AssetImage(AppImagesKey.specialOffer),
                       width: 75.w,
                       height: 60.h,
                     ),
@@ -236,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   shape: BoxShape.circle,
-                                  image: DecorationImage(
+                                  image: const DecorationImage(
                                     image: AssetImage(
                                       AppImagesKey.offerEmojis,
                                     ),
@@ -260,7 +259,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 343.w,
                 decoration: BoxDecoration(
                     color: AppColors.backgroundColors,
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage(
                           AppImagesKey.flatAndHeelsProduct,
                         ),
@@ -285,7 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       productImages: AppString.newProduct[index]["images"],
                       discountPrice: AppString.newProduct[index]["discountPrice"],
                       price: AppString.newProduct[index]["price"],
-                      rating: SizedBox(),
+                      rating: const SizedBox(),
                       title: AppString.newProduct[index]["title"],
                       discount: AppString.newProduct[index]["discount"],
                     );
@@ -307,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image(
-                        image: AssetImage(
+                        image: const AssetImage(
                           AppImagesKey.hotSummerSell,
                         ),
                         height: 200.h,
@@ -370,7 +369,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             topLeft: Radius.circular(8.r),
                             bottomLeft: Radius.circular(8.r),
                           ),
-                          image: DecorationImage(
+                          image: const DecorationImage(
                               image: AssetImage(
                                 AppImagesKey.offerShoes,
                               ),

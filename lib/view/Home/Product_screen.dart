@@ -11,6 +11,7 @@ import 'package:stylish_ecommerce_wc/core/common_widget/common_trending_product_
 import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
+import 'package:stylish_ecommerce_wc/core/routes/routes_name.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 import 'package:stylish_ecommerce_wc/core/utils/sized_box_extension.dart';
 
@@ -35,7 +36,7 @@ class _ProductScreenState extends State<ProductScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CommonText(
-                text: "${AppString.trendingProductsInfo.length} " + AppString.items,
+                text: "${AppString.trendingProductsInfo.length} ${AppString.items}",
                 style: AppTextStyle.w600(color: AppColors.backColor, fontSize: 18.sp),
               ),
               Row(
@@ -63,6 +64,9 @@ class _ProductScreenState extends State<ProductScreen> {
               itemBuilder: (context, index) {
                 var product = AppString.trendingProductsInfo[index];
                 return CommonTrendingProductScreen(
+                  onTap: () {
+                    Get.toNamed(RoutesName.shopScreen);
+                  },
                   imagesIndex: index,
                   productImages: product["images"],
                   title: product["title"],

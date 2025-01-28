@@ -63,4 +63,9 @@ class AppIcons {
     color: AppColors.backColor,
     size: 14.sp,
   );
+  static Icon shopping_cart_outlined = Icon(
+    Icons.shopping_cart_outlined,
+    color: AppColors.backColor,
+    size: 20.sp,
+  );
 }
