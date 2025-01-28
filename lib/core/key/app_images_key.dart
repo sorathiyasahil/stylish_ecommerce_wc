@@ -30,7 +30,15 @@ class AppImagesKey {
   static const String blackWinter = "$_assetsPath/Black Winter.png";
   static const String mensStarry = "$_assetsPath/Mens Starry.png";
   static const String blackDress = "$_assetsPath/Black Dress.png";
-  static const String pinkEmbroide = "$_assetsPath/Pink Embroide.png.png";
+  static const String pinkEmbroide = "$_assetsPath/Pink Embroide.png";
   static const String flareDress = "$_assetsPath/Flare Dress.png";
-  static const String denimDress = "$_assetsPath/denim dress.png.png";
+  static const String denimDress = "$_assetsPath/denim dress.png";
+  static const String jordanStay = "$_assetsPath/JordanStay.png";
+  static const String realme7 = "$_assetsPath/Realme7.png";
+  static const String sonyPS4 = "$_assetsPath/Sony PS4.png";
+  static const String blackJacket = "$_assetsPath/Black Jacket.png";
+  static const String nikonCamera = "$_assetsPath/nikoncamera.png";
+  static const String mensLoferShoes = "$_assetsPath/menslofershoes.png";
+  static const String muesli = "$_assetsPath/muesli.png";
+  static const String hotChocolate = "$_assetsPath/hotChocolate.png";
 }

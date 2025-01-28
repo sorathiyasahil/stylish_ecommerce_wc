@@ -4,7 +4,8 @@ class CommonText extends StatelessWidget {
   final String text;
   final TextStyle? style;
   final TextAlign? textAlign;
-  const CommonText({super.key, required this.text, this.style, this.textAlign});
+  final overflow;
+  const CommonText({super.key, required this.text, this.style, this.textAlign, this.overflow});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class CommonText extends StatelessWidget {
       text,
       textAlign: textAlign ?? TextAlign.center,
       style: style,
-      overflow: TextOverflow.visible,
+      overflow: overflow ?? TextOverflow.visible,
       maxLines: 2,
     );
   }

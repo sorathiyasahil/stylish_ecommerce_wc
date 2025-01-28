@@ -111,30 +111,205 @@ class AppString {
     },
   };
 
-  static List trendingProductInfo = [
+  static List trendingProductsInfo = [
     {
       "images": AppImagesKey.blackWinter,
       "title": "Black Winter...",
-      "description": "Autumn And Winter Casual cotton-padded jacket...",
       "discountPrice": "499",
-      "price": "1599",
-      "discount": "60% off ",
-      "itemCount": "6890",
+      "price": "1,000",
+      "description":
+          "The Black Winter is a high-output, versatile humbucker guitar pickup, designed for heavy metal and aggressive playing styles. It offers searing highs, tight bass, and a balanced midrange for brutal tones with exceptional clarity.",
+      "discount": "50% off ",
+      "size": ["M", "L", "S", "XL", "XXL"],
+      "review": "6890",
     },
     {
-      "images": AppImagesKey.labbinWhiteSneakers,
-      "title": "Labbin White Sneakers For Men and Female",
-      "discountPrice": "650",
-      "price": "1250",
-      "discount": "70% off "
+      "images": AppImagesKey.mensStarry,
+      "title": "Mens Starry",
+      "discountPrice": "399",
+      "price": "800",
+      "description":
+          "The Men's Starry collection features stylish apparel and accessories inspired by the elegance of starry nights. Designed for comfort and sophistication, these pieces are perfect for making a bold, celestial statement in everyday or special occasions.",
+      "discount": "50% off ",
+      "size": ["M", "L", "S", "XL", "XXL"],
+      "review": "1,52,344",
     },
     {
-      "images": AppImagesKey.watchImg,
-      "title": "Mammon Women's Handbag(Set of 3, Beige)",
-      "discountPrice": "750",
-      "price": "1999",
-      "discount": "70% off "
-    }
+      "images": AppImagesKey.blackDress,
+      "title": "Black Dress",
+      "discountPrice": "2,000",
+      "price": "4,000",
+      "description":
+          "The Women's Black Dress collection offers timeless elegance with sleek designs perfect for any occasion. From chic casual wear to sophisticated evening gowns, these dresses are crafted to enhance confidence and style.",
+      "discount": "50% off ",
+      "size": ["M", "L", "S", "XL", "XXL"],
+      "review": "5,23,456",
+    },
+    {
+      "images": AppImagesKey.pinkEmbroide,
+      "title": "Pink Embroide...",
+      "discountPrice": "1,900",
+      "price": "3,800",
+      "description":
+          "The Pink Embroidered collection for women features beautifully detailed designs that combine elegance with femininity. Perfect for festive occasions or casual outings, these pieces showcase intricate embroidery on soft pink fabrics, offering a blend of charm and sophistication.",
+      "discount": "50% off ",
+      "size": ["M", "L", "S", "XL", "XXL"],
+      "review": "45,678",
+    },
+    {
+      "images": AppImagesKey.flareDress,
+      "title": "Flare Dress",
+      "discountPrice": "1,990",
+      "price": "3,980",
+      "description":
+          "The Women's Flare Dress collection features stylish, flowy designs that add grace and comfort to your wardrobe. Perfect for casual outings or special occasions, these dresses enhance movement with their flared silhouettes, offering a chic and timeless look.",
+      "discount": "50% off ",
+      "size": ["M", "L", "S", "XL", "XXL"],
+      "review": "45,678",
+    },
+    {
+      "images": AppImagesKey.denimDress,
+      "title": "denim Dress",
+      "discountPrice": "999",
+      "price": "2,000",
+      "description":
+          "The Women's Denim Dress collection blends casual comfort with trendy style, perfect for everyday wear or a relaxed outing. These versatile dresses come in various cuts and washes, offering a chic and effortless look that suits any occasion.",
+      "discount": "50% off ",
+      "size": ["M", "L", "S", "XL", "XXL"],
+      "review": "27,344",
+    },
+    {
+      "images": AppImagesKey.jordanStay,
+      "title": "Jordan Stay",
+      "discountPrice": "4999",
+      "price": "10,000",
+      "description":
+          "The Jordan Stay Shoes for men combine iconic style with all-day comfort. Designed with premium materials and advanced cushioning, they offer a sleek look and excellent performance, perfect for both sports and casual wear.",
+      "discount": "50% off ",
+      "size": [
+        "7 UK",
+        "8 UK",
+        "9 UK",
+        "10 UK",
+        "11 UK",
+        "12 UK",
+      ],
+      "review": "10,23,456",
+    },
+    {
+      "images": AppImagesKey.realme7,
+      "title": "Realme 7",
+      "discountPrice": "3,500",
+      "price": "7,000",
+      "description":
+          "The Realme 7 mobile features a powerful MediaTek Helio G95 processor, a 6.5-inch FHD+ display with a 90Hz refresh rate, and a 5000mAh battery with 30W Dart Charge. It also boasts a quad-camera setup, including a 64MP primary sensor, making it perfect for gaming, photography, and seamless multitasking.",
+      "discount": "50% off ",
+      "size": [
+        "6 + 64",
+        "8 + 64",
+        "6 + 128",
+        "12 + 128",
+        "16 + 128",
+      ],
+      "review": "3,44,567",
+    },
+    {
+      "images": AppImagesKey.sonyPS4,
+      "title": "Sony PS4",
+      "discountPrice": "1,999",
+      "price": "4,000",
+      "description":
+          "The Sony PS4 is a powerful gaming console offering immersive gameplay with stunning graphics and exclusive titles. Equipped with a 1.6GHz AMD Jaguar processor, 8GB RAM, and a 500GB/1TB storage option, it supports Blu-ray, streaming, and multiplayer gaming for endless entertainment.",
+      "discount": "50% off ",
+      "size": [
+        "256 GB",
+        "512 GB",
+        "1 TB",
+        "2 TB",
+      ],
+      "review": "8,35,566",
+    },
+    {
+      "images": AppImagesKey.blackJacket,
+      "title": "Black Jacket",
+      "discountPrice": "2,999",
+      "price": "6,000",
+      "description":
+          "The Black Jacket 12 for men is a stylish, versatile outerwear piece designed to offer both warmth and fashion. Featuring a sleek black design, it is perfect for casual or semi-formal occasions, providing comfort and a modern look with its quality fabric and fit.",
+      "discount": "50% off ",
+      "size": [
+        "M",
+        "L",
+        "S",
+        "XL",
+        "XXL",
+      ],
+      "review": "2,23,569",
+    },
+    {
+      "images": AppImagesKey.nikonCamera,
+      "title": "Nikon Camera",
+      "discountPrice": "26,999",
+      "price": "54,000",
+      "description":
+          "The Nikon D7200 is a DSLR digital camera known for its impressive image quality and fast performance. With a 24.2MP sensor, 51-point autofocus system, and 1080p HD video recording, it offers great versatility for both photography enthusiasts and professionals. The camera also features Wi-Fi connectivity for easy sharing and remote control.",
+      "discount": "50% off ",
+      "size": [
+        "200 D",
+        "700 D",
+        "1300 D",
+        "7200 D",
+      ],
+      "review": "67,456",
+    },
+    {
+      "images": AppImagesKey.mensLoferShoes,
+      "title": "Men Formal Shoes",
+      "discountPrice": "999",
+      "price": "2,000",
+      "description":
+          "Men’s and boys' loafer shoes offer a perfect combination of comfort and style, making them ideal for both casual and semi-formal occasions. With slip-on designs and soft materials like leather or suede, they provide a relaxed yet polished look for everyday wear.",
+      "discount": "50% off ",
+      "size": [
+        "200 D",
+        "700 D",
+        "1300 D",
+        "7200 D",
+      ],
+      "review": "16,45,678",
+    },
+    {
+      "images": AppImagesKey.muesli,
+      "title": "muesli",
+      "discountPrice": "999",
+      "price": "2,000",
+      "description":
+          "Muesli is a healthy and nutritious breakfast dish made from a mixture of rolled oats, nuts, seeds, and dried fruits. Often enjoyed with milk, yogurt, or fruit juice, it’s a great source of fiber, vitamins, and energy to start the day.",
+      "discount": "50% off ",
+      "size": [
+        "150 GM",
+        "250 GM",
+        "500 GM",
+        "1 KG",
+      ],
+      "review": "1,45,678",
+    },
+    {
+      "images": AppImagesKey.hotChocolate,
+      "title": "Hot Chocolate",
+      "discountPrice": "999",
+      "price": "2,000",
+      "description":
+          "Hot chocolate is a warm, comforting beverage made by mixing milk or water with cocoa powder and sugar. It can be topped with whipped cream or marshmallows for extra sweetness, making it a popular choice for chilly days or as a cozy treat.",
+      "discount": "50% off ",
+      "size": [
+        "150 GM",
+        "250 GM",
+        "500 GM",
+        "1 KG",
+      ],
+      "review": "1,45,678",
+    },
   ];
 
   static List newProduct = [

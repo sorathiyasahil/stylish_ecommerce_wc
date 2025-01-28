@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
-import 'package:get/get_common/get_reset.dart';
+import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
+import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_app_bar.dart';
-import 'package:stylish_ecommerce_wc/core/common_widget/common_product_card.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_search_bar.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_sort_button.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
+import 'package:stylish_ecommerce_wc/core/common_widget/common_trending_product_screen.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
@@ -26,8 +26,8 @@ class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColors,
-      appBar: CommonAppBar(),
+      backgroundColor: AppColors.homeBGColors,
+      appBar: const CommonAppBar(),
       body: Column(
         children: [
           CommonSearchBar(controller: _searchController),
@@ -35,7 +35,7 @@ class _ProductScreenState extends State<ProductScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CommonText(
-                text: "${AppString.items.length} " + AppString.items,
+                text: "${AppString.trendingProductsInfo.length} " + AppString.items,
                 style: AppTextStyle.w600(color: AppColors.backColor, fontSize: 18.sp),
               ),
               Row(
@@ -55,13 +55,25 @@ class _ProductScreenState extends State<ProductScreen> {
             ],
           ),
           Expanded(
-            child: MasonryGridView.builder(
-              itemCount: AppString.trendingProductInfo.length,
-              gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            child: StaggeredGridView.countBuilder(
+              itemCount: AppString.trendingProductsInfo.length,
+              crossAxisCount: 2,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 16,
               itemBuilder: (context, index) {
-                return CommonProductCard(
-                  productImages: AppString.trendingProductInfo[index]["images"],
-                ).paddingAll(8);
+                var product = AppString.trendingProductsInfo[index];
+                return CommonTrendingProductScreen(
+                  imagesIndex: index,
+                  productImages: product["images"],
+                  title: product["title"],
+                  description: product["description"],
+                  discountPrice: product["discountPrice"],
+                  countItems: product["review"],
+                );
+              },
+              staggeredTileBuilder: (index) {
+                int value = index + 1;
+                return StaggeredTile.count(1, value.isEven ? 1.55 : 1.85);
               },
             ),
           )
