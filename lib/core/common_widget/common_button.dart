@@ -5,7 +5,7 @@ import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 
 class CommonButton extends StatelessWidget {
-  final text;
+  final String? text;
   final void Function()? onTap;
   const CommonButton({super.key, this.text, this.onTap});
 
@@ -23,7 +23,7 @@ class CommonButton extends StatelessWidget {
         child: Align(
           alignment: Alignment.center,
           child: CommonText(
-            text: text,
+            text: text ?? "",
             style: AppTextStyle.w600(fontSize: 20.sp, color: AppColors.backgroundColors),
           ),
         ),

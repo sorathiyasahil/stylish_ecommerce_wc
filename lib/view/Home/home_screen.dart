@@ -118,6 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                       },
                       itemBuilder: (context, index) {
+                        final productData = AppString.homepageImagePageView[index];
                         return Column(
                           children: [
                             Container(
@@ -126,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(
-                                    AppString.homepageImagePageView[index]["images"],
+                                    productData.images.toString(),
                                   ),
                                 ),
                               ),
@@ -143,24 +144,27 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CommonText(
-                            text: AppString.homepageImagePageView[pageCount]["discount"],
+                            text: AppString.homepageImagePageView[pageCount].disCount.toString(),
                             style: AppTextStyle.w700(
                                 fontSize: 20.sp, color: AppColors.backgroundColors),
                           ),
                           8.height,
                           CommonText(
-                            text: AppString.homepageImagePageView[pageCount]["title"],
+                            text: AppString.homepageImagePageView[pageCount].title.toString(),
                             style: AppTextStyle.w400(
                                 fontSize: 12.sp, color: AppColors.backgroundColors),
                           ),
                           CommonText(
-                            text: AppString.homepageImagePageView[pageCount]["color"],
+                            text:
+                                AppString.homepageImagePageView[pageCount].productColors.toString(),
                             style: AppTextStyle.w400(
-                                fontSize: 12.sp, color: AppColors.backgroundColors),
+                              fontSize: 12.sp,
+                              color: AppColors.backgroundColors,
+                            ),
                           ),
                           12.height,
                           const CommonBorderButton(
-                            text: "Shop Now",
+                            text: AppString.shopNow,
                           )
                         ],
                       ))
@@ -189,14 +193,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: 5,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
+                    final productInfo = AppString.productInfo[index];
                     return CommonProductCard(
-                      productImages: AppString.productInfo.values.elementAt(index)["images"],
-                      description: AppString.productInfo.values.elementAt(index)["description"],
-                      title: AppString.productInfo.values.elementAt(index)["title"],
-                      discount: AppString.productInfo.values.elementAt(index)["discount"],
-                      countItems: AppString.productInfo.values.elementAt(index)["itemCount"],
-                      price: AppString.productInfo.values.elementAt(index)["price"],
-                      discountPrice: AppString.productInfo.values.elementAt(index)["discountPrice"],
+                      productImages: productInfo.images,
+                      description: productInfo.description,
+                      title: productInfo.title,
+                      discount: productInfo.discount,
+                      countItems: productInfo.review.toString(),
+                      price: productInfo.price.toString(),
+                      discountPrice: productInfo.discountPrice.toString(),
                     );
                   },
                 ),

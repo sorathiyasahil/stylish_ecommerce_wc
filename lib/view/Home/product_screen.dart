@@ -68,11 +68,11 @@ class _ProductScreenState extends State<ProductScreen> {
                     Get.toNamed(RoutesName.shopScreen);
                   },
                   imagesIndex: index,
-                  productImages: product["images"],
-                  title: product["title"],
-                  description: product["description"],
-                  discountPrice: product["discountPrice"],
-                  countItems: product["review"],
+                  productImages: product.img,
+                  title: product.title,
+                  description: product.description,
+                  discountPrice: product.discountPrice.toString(),
+                  countItems: product.review.toString(),
                 );
               },
               staggeredTileBuilder: (index) {

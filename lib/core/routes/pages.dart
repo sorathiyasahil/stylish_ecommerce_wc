@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:stylish_ecommerce_wc/core/routes/routes_name.dart';
-import 'package:stylish_ecommerce_wc/view/Home/Product_screen.dart';
+import 'package:stylish_ecommerce_wc/view/Home/product_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/bottom_navigation_bar_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/get_started_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/home_screen.dart';

@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:stylish_ecommerce_wc/core/common_widget/common_border_button.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
-import 'package:stylish_ecommerce_wc/core/key/app_images_key.dart';
 import 'package:stylish_ecommerce_wc/core/utils/sized_box_extension.dart';
 
 import '../../core/theme/app_colors.dart';
@@ -62,7 +60,7 @@ class _ShopScreenState extends State<ShopScreen> {
                         borderRadius: BorderRadius.circular(16.r),
                         image: DecorationImage(
                             image: AssetImage(
-                              AppString.trendingProductsInfo[index]["images"],
+                              AppString.trendingProductsInfo[index].img.toString(),
                             ),
                             fit: BoxFit.cover)),
                   ).paddingSymmetric(
