@@ -62,7 +62,7 @@ class AppPages {
     GetPage(
       name: RoutesName.shopScreen,
       page: () => ShopScreen(
-        product: Get.arguments[0],
+        product: Get.arguments,
       ),
     ),
   ];

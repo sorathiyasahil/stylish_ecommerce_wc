@@ -18,6 +18,7 @@ import '../../core/theme/app_colors.dart';
 
 class ShopScreen extends StatefulWidget {
   final TrendingProductInfo product;
+
   const ShopScreen({super.key, required this.product});
 
   @override
@@ -25,6 +26,8 @@ class ShopScreen extends StatefulWidget {
 }
 
 class _ShopScreenState extends State<ShopScreen> {
+  String? size = " ";
+  int isSelected = 0;
   final PageController _pageController = PageController();
   @override
   Widget build(BuildContext context) {
@@ -66,7 +69,7 @@ class _ShopScreenState extends State<ShopScreen> {
                             color: Colors.green,
                             borderRadius: BorderRadius.circular(16.r),
                             image: DecorationImage(
-                                image: AssetImage(productImages ?? ""), fit: BoxFit.cover)),
+                                image: AssetImage(widget.product.img ?? ""), fit: BoxFit.cover)),
                       ).paddingSymmetric(horizontal: 5);
                     },
                   ),
@@ -91,7 +94,7 @@ class _ShopScreenState extends State<ShopScreen> {
                     style: AppTextStyle.w700(fontSize: 16.sp),
                   ),
                   CommonText(
-                    text: " M ",
+                    text: " ${size.toString()}",
                     style: AppTextStyle.w700(fontSize: 16.sp),
                   ),
                 ],
@@ -100,30 +103,51 @@ class _ShopScreenState extends State<ShopScreen> {
                 height: 32.h,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 5,
+                  itemCount: widget.product.size!.length,
                   itemBuilder: (context, index) {
-                    return Container(
-                      height: 50.h,
-                      width: 60.w,
-                      decoration: BoxDecoration(
-                          color: AppColors.onboardingButtonColor,
-                          borderRadius: BorderRadius.circular(8.r)),
-                      child: const Center(child: CommonText(text: "1223S")),
-                    ).paddingOnly(right: 5);
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isSelected = index;
+                          size = widget.product.size![index].toString();
+                        });
+                      },
+                      child: Container(
+                        height: 70.h,
+                        width: 80.w,
+                        decoration: BoxDecoration(
+                            color: isSelected == index
+                                ? AppColors.callToActionButtonColors
+                                : AppColors.backgroundColors,
+                            borderRadius: BorderRadius.circular(8.r),
+                            border: Border.all(color: AppColors.callToActionButtonColors)),
+                        child: Center(
+                          child: CommonText(
+                            text: "${widget.product.size![index]}",
+                            style: AppTextStyle.w700(
+                              color: isSelected == index
+                                  ? AppColors.backgroundColors
+                                  : AppColors.callToActionButtonColors,
+                              fontSize: 14.sp,
+                            ),
+                          ),
+                        ),
+                      ).paddingOnly(right: 5),
+                    );
                   },
                 ),
               ).paddingOnly(top: 8, bottom: 8, left: 16.w, right: 2),
               5.height,
               CommonText(
                 textAlign: TextAlign.start,
-                text: productTitle.toString(),
+                text: widget.product.title.toString(),
                 style: AppTextStyle.w700(fontSize: 20.sp),
               ).paddingSymmetric(horizontal: 16.w),
               4.height,
               CommonText(
                 maxLine: 1,
                 textAlign: TextAlign.start,
-                text: productDescription.toString(),
+                text: widget.product.description.toString(),
                 style: AppTextStyle.w500(fontSize: 14.sp),
               ).paddingSymmetric(horizontal: 16.w),
               4.height,
@@ -132,7 +156,7 @@ class _ShopScreenState extends State<ShopScreen> {
                   const CommonRating(rating: 2),
                   8.width,
                   CommonText(
-                    text: productReview.toString(),
+                    text: widget.product.review.toString(),
                     style: AppTextStyle.w500(fontSize: 14.sp),
                   )
                 ],
@@ -141,7 +165,7 @@ class _ShopScreenState extends State<ShopScreen> {
               Row(
                 children: [
                   CommonText(
-                    text: "₹$productPrice",
+                    text: "₹${widget.product.price}",
                     style: AppTextStyle.w500(
                         textDecoration: TextDecoration.lineThrough,
                         color: AppColors.priceColors,
@@ -150,12 +174,12 @@ class _ShopScreenState extends State<ShopScreen> {
                   ),
                   8.width,
                   CommonText(
-                    text: "₹$productDiscountPrice",
+                    text: "₹${widget.product.discountPrice}",
                     style: AppTextStyle.w600(fontSize: 14.sp, color: AppColors.backColor),
                   ),
                   8.width,
                   CommonText(
-                    text: productDiscount.toString(),
+                    text: widget.product.discount.toString(),
                     style: AppTextStyle.w700(
                         fontSize: 14.sp, color: AppColors.callToActionButtonColors),
                   ),
@@ -171,7 +195,7 @@ class _ShopScreenState extends State<ShopScreen> {
                 maxLine: 10,
                 textAlign: TextAlign.justify,
                 overflow: TextOverflow.visible,
-                text: productDescription.toString(),
+                text: widget.product.description.toString(),
                 style: AppTextStyle.w500(fontSize: 12.sp),
               ).paddingSymmetric(horizontal: 16.w),
               8.height,
