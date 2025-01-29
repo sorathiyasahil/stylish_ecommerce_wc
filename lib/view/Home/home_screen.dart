@@ -200,8 +200,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       title: productInfo.title,
                       discount: productInfo.discount,
                       countItems: productInfo.review.toString(),
-                      price: productInfo.price.toString(),
-                      discountPrice: productInfo.discountPrice.toString(),
+                      price: productInfo.price,
+                      rating: 3,
+                      discountPrice: productInfo.discountPrice,
                     );
                   },
                 ),
@@ -280,18 +281,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 bgColor: AppColors.callToActionButtonColors,
               ).paddingSymmetric(vertical: 16.w),
               SizedBox(
-                height: 230,
+                height: 240,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: AppString.newProduct.length,
                   itemBuilder: (context, index) {
+                    final newProductData = AppString.newProduct[index];
                     return CommonProductCard(
-                      productImages: AppString.newProduct[index]["images"],
-                      discountPrice: AppString.newProduct[index]["discountPrice"],
-                      price: AppString.newProduct[index]["price"],
-                      rating: const SizedBox(),
-                      title: AppString.newProduct[index]["title"],
-                      discount: AppString.newProduct[index]["discount"],
+                      productImages: newProductData.images,
+                      discountPrice: newProductData.discountPrice,
+                      price: newProductData.price,
+                      title: newProductData.title,
+                      discount: newProductData.discount,
+                      rating: 0,
                     );
                   },
                 ),

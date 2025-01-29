@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:stylish_ecommerce_wc/core/common_widget/common_rating.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
@@ -19,8 +20,8 @@ class CommonTrendingProductScreen extends StatelessWidget {
   final String? discount;
   final String? price;
   final String? countItems;
-  final Widget? rating;
-  final Widget? discountAndPrice;
+  final int? rating;
+  final int? discountAndPrice;
   const CommonTrendingProductScreen(
       {super.key,
       this.height,
@@ -125,24 +126,9 @@ class CommonTrendingProductScreen extends StatelessWidget {
                     : const SizedBox(),
                 Row(
                   children: [
-                    rating ??
-                        Row(
-                          children: [
-                            Row(
-                              children: List.generate(
-                                4,
-                                (index) {
-                                  return Row(
-                                    children: [
-                                      AppIcons.star,
-                                    ],
-                                  );
-                                },
-                              ),
-                            ),
-                            AppIcons.star_half,
-                          ],
-                        ),
+                    CommonRating(
+                      rating: rating,
+                    ),
                     CommonText(
                       text: countItems ?? " ",
                       style: AppTextStyle.w400(fontSize: 10.sp, color: AppColors.gray),

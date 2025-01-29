@@ -27,7 +27,17 @@ class AppColors {
   static Color selectedItemColor = const Color(0XFFEB3030);
   static Color offerTextColors = const Color(0XFFFE735C);
   static Color starColors = const Color(0XFFEDB310);
+  static Color priceColors = const Color(0XFF808488);
+  static Color deliveryTimeBgColor = const Color(0XFFFFCCD5);
 
   static Color transparent = Colors.transparent;
   static const Color blueGrey = Colors.blueGrey;
+
+  //Linear Colors
+
+  static const Color blur = Color(0xFF3F92FF);
+  static const Color darkBlur = Color(0xFF0B3689);
+
+  static const Color lightGreen = Color(0xFF71F9A9);
+  static const Color darkGreen = Color(0xFF31B769);
 }

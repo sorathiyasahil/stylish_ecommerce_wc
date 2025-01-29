@@ -62,10 +62,10 @@ class _ProductScreenState extends State<ProductScreen> {
               mainAxisSpacing: 16,
               crossAxisSpacing: 16,
               itemBuilder: (context, index) {
-                var product = AppString.trendingProductsInfo[index];
+                final product = AppString.trendingProductsInfo[index];
                 return CommonTrendingProductScreen(
                   onTap: () {
-                    Get.toNamed(RoutesName.shopScreen);
+                    Get.toNamed(RoutesName.shopScreen, arguments: product);
                   },
                   imagesIndex: index,
                   productImages: product.img,
@@ -73,6 +73,7 @@ class _ProductScreenState extends State<ProductScreen> {
                   description: product.description,
                   discountPrice: product.discountPrice.toString(),
                   countItems: product.review.toString(),
+                  rating: product.rating,
                 );
               },
               staggeredTileBuilder: (index) {

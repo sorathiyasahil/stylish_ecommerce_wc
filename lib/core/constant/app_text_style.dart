@@ -28,12 +28,14 @@ class AppTextStyle {
     );
   }
 
-  static TextStyle w500({TextDecoration? textDecoration, Color? color, double? fontSize}) {
+  static TextStyle w500(
+      {Color? decorationColor, TextDecoration? textDecoration, Color? color, double? fontSize}) {
     return TextStyle(
       color: color ?? AppColors.backColor,
       fontSize: fontSize ?? 10.sp,
       fontWeight: FontWeight.w500,
       fontFamily: _font_regular,
+      decorationColor: decorationColor ?? AppColors.onboardingButtonColor,
       decoration: textDecoration,
     );
   }

@@ -1,4 +1,5 @@
 const _assetsPath = "assets/images";
+const _assetsPathIcon = "assets/icons";
 
 class AppImagesKey {
   static const String appLogo = "$_assetsPath/logo.png";
@@ -41,4 +42,9 @@ class AppImagesKey {
   static const String mensLoferShoes = "$_assetsPath/menslofershoes.png";
   static const String muesli = "$_assetsPath/muesli.png";
   static const String hotChocolate = "$_assetsPath/hotChocolate.png";
+
+  ///SVG Images
+
+  static const String locationIcon = "$_assetsPathIcon/locationIcons.svg";
+  static const String lockIcon = "$_assetsPathIcon/lock.svg";
 }

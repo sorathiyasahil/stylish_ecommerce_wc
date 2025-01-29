@@ -17,6 +17,13 @@ class ProductData {
       {this.rating, this.price, this.disCount});
 }
 
+class demo {
+  final String demo1;
+  final String demo2;
+
+  demo({required this.demo1, required this.demo2});
+}
+
 class ProductInfo {
   final String? images;
   final String? title;
@@ -39,19 +46,20 @@ class TrendingProductInfo {
   final String? discount;
   final List? size;
   final double? review;
+  final int? rating;
 
   TrendingProductInfo(this.img, this.title, this.discountPrice, this.price, this.description,
-      this.discount, this.size, this.review);
+      this.discount, this.size, this.review, this.rating);
 }
 
-class NewProduct {
+class NewProductInfo {
   final String? images;
   final String? title;
-  final String? discountPrice;
-  final String? price;
+  final double? discountPrice;
+  final double? price;
   final String? discount;
 
-  NewProduct(this.images, this.title, this.discountPrice, this.price, this.discount);
+  NewProductInfo(this.images, this.title, this.discountPrice, this.price, this.discount);
 }
 
 class AppString {
@@ -173,22 +181,25 @@ class AppString {
   static List<TrendingProductInfo> trendingProductsInfo = [
     TrendingProductInfo(
         AppImagesKey.blackWinter,
-        "Black Winter...",
+        "Black Winter",
         499,
         1000,
         "The Black Winter is a high-output, versatile humbucker guitar pickup, designed for heavy metal and aggressive playing styles. It offers searing highs, tight bass, and a balanced midrange for brutal tones with exceptional clarity.",
         "50% off ",
         ["M", "L", "S", "XL", "XXL"],
-        6890),
+        6890,
+        4),
     TrendingProductInfo(
-        AppImagesKey.mensStarry,
-        "Mens Starry",
-        399,
-        800,
-        "The Men's Starry collection features stylish apparel and accessories inspired by the elegance of starry nights. Designed for comfort and sophistication, these pieces are perfect for making a bold, celestial statement in everyday or special occasions.",
-        "50% off ",
-        ["M", "L", "S", "XL", "XXL"],
-        152344),
+      AppImagesKey.mensStarry,
+      "Mens Starry",
+      399,
+      800,
+      "The Men's Starry collection features stylish apparel and accessories inspired by the elegance of starry nights. Designed for comfort and sophistication, these pieces are perfect for making a bold, celestial statement in everyday or special occasions.",
+      "50% off ",
+      ["M", "L", "S", "XL", "XXL"],
+      152344,
+      4,
+    ),
     TrendingProductInfo(
       AppImagesKey.blackDress,
       "Black Dress",
@@ -198,6 +209,7 @@ class AppString {
       "50% off ",
       ["M", "L", "S", "XL", "XXL"],
       523456,
+      4,
     ),
     TrendingProductInfo(
       AppImagesKey.pinkEmbroide,
@@ -208,6 +220,7 @@ class AppString {
       "50% off ",
       ["M", "L", "S", "XL", "XXL"],
       45678,
+      4,
     ),
     TrendingProductInfo(
       AppImagesKey.flareDress,
@@ -218,6 +231,7 @@ class AppString {
       "50% off ",
       ["M", "L", "S", "XL", "XXL"],
       45678,
+      4,
     ),
     TrendingProductInfo(
       AppImagesKey.denimDress,
@@ -228,6 +242,7 @@ class AppString {
       "50% off ",
       ["M", "L", "S", "XL", "XXL"],
       27344,
+      4,
     ),
     TrendingProductInfo(
       AppImagesKey.jordanStay,
@@ -245,6 +260,7 @@ class AppString {
         "12 UK",
       ],
       1023456,
+      3,
     ),
     TrendingProductInfo(
       AppImagesKey.realme7,
@@ -261,6 +277,7 @@ class AppString {
         "16 + 128",
       ],
       344567,
+      4,
     ),
     TrendingProductInfo(
       AppImagesKey.sonyPS4,
@@ -276,6 +293,7 @@ class AppString {
         "2 TB",
       ],
       835566,
+      3,
     ),
     TrendingProductInfo(
       AppImagesKey.blackJacket,
@@ -292,6 +310,7 @@ class AppString {
         "XXL",
       ],
       223569,
+      4,
     ),
     TrendingProductInfo(
       AppImagesKey.nikonCamera,
@@ -307,6 +326,7 @@ class AppString {
         "7200 D",
       ],
       67456,
+      4,
     ),
     TrendingProductInfo(
       AppImagesKey.mensLoferShoes,
@@ -322,61 +342,62 @@ class AppString {
         "7200 D",
       ],
       1645678,
+      5,
     ),
     TrendingProductInfo(
-      AppImagesKey.muesli,
-      "muesli",
-      999,
-      2000,
-      "Muesli is a healthy and nutritious breakfast dish made from a mixture of rolled oats, nuts, seeds, and dried fruits. Often enjoyed with milk, yogurt, or fruit juice, it’s a great source of fiber, vitamins, and energy to start the day.",
-      "50% off ",
-      [
-        "150 GM",
-        "250 GM",
-        "500 GM",
-        "1 KG",
-      ],
-      145678,
-    ),
+        AppImagesKey.muesli,
+        "muesli",
+        999,
+        2000,
+        "Muesli is a healthy and nutritious breakfast dish made from a mixture of rolled oats, nuts, seeds, and dried fruits. Often enjoyed with milk, yogurt, or fruit juice, it’s a great source of fiber, vitamins, and energy to start the day.",
+        "50% off ",
+        [
+          "150 GM",
+          "250 GM",
+          "500 GM",
+          "1 KG",
+        ],
+        145678,
+        2),
     TrendingProductInfo(
-      AppImagesKey.hotChocolate,
-      "Hot Chocolate",
-      999,
-      2000,
-      "Hot chocolate is a warm, comforting beverage made by mixing milk or water with cocoa powder and sugar. It can be topped with whipped cream or marshmallows for extra sweetness, making it a popular choice for chilly days or as a cozy treat.",
-      "50% off ",
-      [
-        "150 GM",
-        "250 GM",
-        "500 GM",
-        "1 KG",
-      ],
-      145678,
-    ),
+        AppImagesKey.hotChocolate,
+        "Hot Chocolate",
+        999,
+        2000,
+        "Hot chocolate is a warm, comforting beverage made by mixing milk or water with cocoa powder and sugar. It can be topped with whipped cream or marshmallows for extra sweetness, making it a popular choice for chilly days or as a cozy treat.",
+        "50% off ",
+        [
+          "150 GM",
+          "250 GM",
+          "500 GM",
+          "1 KG",
+        ],
+        145678,
+        5),
   ];
 
-  static List newProduct = [
-    {
-      "images": AppImagesKey.watchImg,
-      "title": "IWC Schaffhausen 2021 Pilot's Watch  'SIHH 2019' 44mm",
-      "discountPrice": "650",
-      "price": "1599",
-      "discount": "60% off "
-    },
-    {
-      "images": AppImagesKey.labbinWhiteSneakers,
-      "title": "Labbin White Sneakers For Men and Female",
-      "discountPrice": "650",
-      "price": "1250",
-      "discount": "70% off "
-    },
-    {
-      "images": AppImagesKey.watchImg,
-      "title": "Mammon Women's Handbag(Set of 3, Beige)",
-      "discountPrice": "750",
-      "price": "1999",
-      "discount": "70% off "
-    }
+  static List<NewProductInfo> newProduct = [
+    NewProductInfo(
+      AppImagesKey.watchImg,
+      "IWC Schaffhausen 2021 Pilot's Watch  'SIHH 2019' 44mm",
+      650,
+      1599,
+      "60% off ",
+    ),
+    NewProductInfo(
+      AppImagesKey.labbinWhiteSneakers,
+      "Labbin White Sneakers For Men and Female",
+      650,
+      1250,
+      "70% off",
+    ),
+    NewProductInfo(
+      AppImagesKey.watchImg,
+      "Mammon Women's Handbag(Set of 3, Beige)",
+      750,
+      1999,
+      "70% off ",
+    ),
   ];
 
   static List screen = [
@@ -445,7 +466,21 @@ class AppString {
   static const String sponserd = "Sponserd";
   static const String upTo = "up to 50% Off";
 
+  static const String rupeesLogo = "₹";
+
   ///Product Screen
 
   static const String items = "Items";
+  static const String nearestStore = "Nearest Store";
+  static const String returnPolicy = "Return policy";
+  static const String vIP = "VIP";
+  static const String goToCart = "Go to Cart";
+  static const String buyNow = "Buy Now";
+  static const String viewSimilar = "View Similar";
+  static const String addToCompare = "Add to Compare";
+  static const String productDetails = "Product Details";
+  static const String deliveryIn = "Delivery in ";
+  static const String withInHour = "1 Within Hour";
+  static const String similarTo = "Similar To";
+  static const String size = "Size:";
 }

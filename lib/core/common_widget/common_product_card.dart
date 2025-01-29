@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:stylish_ecommerce_wc/core/common_widget/common_rating.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
+import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 import 'package:stylish_ecommerce_wc/core/utils/sized_box_extension.dart';
@@ -15,11 +17,11 @@ class CommonProductCard extends StatelessWidget {
   final String? productImages;
   final String? title;
   final String? description;
-  final String? discountPrice;
+  final double? discountPrice;
   final String? discount;
-  final String? price;
-  final String? countItems;
-  final Widget? rating;
+  final double? price;
+  final countItems;
+  final int? rating;
   const CommonProductCard({
     super.key,
     required this.productImages,
@@ -53,17 +55,21 @@ class CommonProductCard extends StatelessWidget {
             width: imagesWidth ?? 170.w,
             decoration: BoxDecoration(
               color: Colors.green,
-              borderRadius: BorderRadius.circular(5.r),
+              borderRadius: BorderRadius.circular(6.r),
               image: DecorationImage(
                 image: AssetImage(productImages!),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
             ),
           ),
           CommonText(
+            overflow: TextOverflow.visible,
             textAlign: TextAlign.start,
             text: title ?? "Title",
-            style: AppTextStyle.w500(color: AppColors.backColor, fontSize: 12.sp),
+            style: AppTextStyle.w500(
+              color: AppColors.backColor,
+              fontSize: 12.sp,
+            ),
           ),
           Expanded(
             child: CommonText(
@@ -73,13 +79,13 @@ class CommonProductCard extends StatelessWidget {
             ),
           ),
           CommonText(
-            text: "$discountPrice",
+            text: "${AppString.rupeesLogo} $discountPrice",
             style: AppTextStyle.w400(color: AppColors.backColor, fontSize: 10.sp),
           ),
           Row(
             children: [
               CommonText(
-                text: "$price",
+                text: "${AppString.rupeesLogo} $price",
                 style: AppTextStyle.w400(
                     color: AppColors.gray,
                     fontSize: 10.sp,
@@ -98,26 +104,11 @@ class CommonProductCard extends StatelessWidget {
           ),
           Row(
             children: [
-              rating ??
-                  Row(
-                    children: [
-                      Row(
-                        children: List.generate(
-                          4,
-                          (index) {
-                            return Row(
-                              children: [
-                                AppIcons.star,
-                              ],
-                            );
-                          },
-                        ),
-                      ),
-                      AppIcons.star_half,
-                    ],
-                  ),
+              CommonRating(
+                rating: rating ?? 0,
+              ),
               CommonText(
-                text: countItems ?? " ",
+                text: countItems ?? "",
                 style: AppTextStyle.w400(fontSize: 10.sp, color: AppColors.gray),
               )
             ],

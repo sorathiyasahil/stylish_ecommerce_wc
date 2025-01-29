@@ -46,12 +46,12 @@ class AppIcons {
   static Icon star = Icon(
     Icons.star,
     color: AppColors.starColors,
-    size: 14.sp,
+    size: 15.sp,
   );
   static Icon star_half = Icon(
     Icons.star_half,
     color: AppColors.gray,
-    size: 14.sp,
+    size: 15.sp,
   );
   static Icon dateRange = Icon(
     Icons.date_range,
@@ -66,6 +66,41 @@ class AppIcons {
   static Icon shopping_cart_outlined = Icon(
     Icons.shopping_cart_outlined,
     color: AppColors.backColor,
+    size: 20.sp,
+  );
+  static Icon locationOn = Icon(
+    Icons.location_on_outlined,
+    color: AppColors.priceColors,
+    size: 15.sp,
+  );
+  static Icon publishedWithChanges = Icon(
+    Icons.published_with_changes,
+    color: AppColors.priceColors,
+    size: 20.sp,
+  );
+  static Icon lockOutline = Icon(
+    Icons.lock_outline,
+    color: AppColors.priceColors,
+    size: 20.sp,
+  );
+  static Icon whiteShoppingCartOutlined = Icon(
+    Icons.shopping_cart_outlined,
+    color: AppColors.backgroundColors,
+    size: 20.sp,
+  );
+  static Icon arrowBackIosNew = Icon(
+    Icons.arrow_back_ios_new,
+    color: AppColors.backColor,
+    size: 20.sp,
+  );
+  static Icon style = Icon(
+    Icons.style_outlined,
+    color: AppColors.backColor,
+    size: 20.sp,
+  );
+  static Icon click = Icon(
+    Icons.ads_click,
+    color: AppColors.backgroundColors,
     size: 20.sp,
   );
 }
