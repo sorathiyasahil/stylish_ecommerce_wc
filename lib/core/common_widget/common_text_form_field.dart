@@ -12,6 +12,7 @@ class CommonTextFormField extends StatelessWidget {
   final String? hintText;
   final Color? focusedBorderColors;
   final Color? enableBorderColors;
+  final TextInputType? keyboardType;
   final void Function()? onTap;
   const CommonTextFormField(
       {super.key,
@@ -23,18 +24,20 @@ class CommonTextFormField extends StatelessWidget {
       this.focusedBorderColors,
       this.enableBorderColors,
       this.fillColor,
-      this.validator});
+      this.validator,
+      this.keyboardType});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       validator: validator,
       onTap: onTap,
-      style: AppTextStyle.w500(
-        color: AppColors.hintTextColor,
-        fontSize: 12.sp,
+      style: AppTextStyle.w700(
+        color: AppColors.backColor,
+        fontSize: 14.sp,
       ),
       controller: controller,
+      keyboardType: keyboardType ?? TextInputType.text,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: AppTextStyle.w500(

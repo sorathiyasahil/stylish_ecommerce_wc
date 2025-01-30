@@ -6,7 +6,10 @@ import 'package:stylish_ecommerce_wc/view/Home/get_started_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/home_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/check_out_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/profile_screen.dart';
+import 'package:stylish_ecommerce_wc/view/Home/shipping/shipping_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/shop_screen.dart';
+import 'package:stylish_ecommerce_wc/view/Home/shopping_bag/shopping_bag_screen.dart';
+import 'package:stylish_ecommerce_wc/view/Home/wish_list_screen.dart';
 import 'package:stylish_ecommerce_wc/view/auth/forgot_password_screen.dart';
 import 'package:stylish_ecommerce_wc/view/auth/onboarding_screen.dart';
 import 'package:stylish_ecommerce_wc/view/auth/sign_in_screen.dart';
@@ -49,7 +52,7 @@ class AppPages {
     ),
     GetPage(
       name: RoutesName.checkOutScreen,
-      page: () => const CheckOutScreen(),
+      page: () => CheckOutScreen(),
     ),
     GetPage(
       name: RoutesName.productScreen,
@@ -58,6 +61,18 @@ class AppPages {
     GetPage(
       name: RoutesName.profileScreen,
       page: () => const ProfileScreen(),
+    ),
+    GetPage(
+      name: RoutesName.wishListScreen,
+      page: () => const WishListScreen(),
+    ),
+    GetPage(
+      name: RoutesName.shoppingBeg,
+      page: () => const ShoppingBagScreen(),
+    ),
+    GetPage(
+      name: RoutesName.shippingScreen,
+      page: () => const ShippingScreen(),
     ),
     GetPage(
       name: RoutesName.shopScreen,

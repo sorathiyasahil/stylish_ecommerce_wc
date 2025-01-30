@@ -7,7 +7,9 @@ import '../constant/app_icons.dart';
 import '../theme/app_colors.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CommonAppBar({super.key});
+  const CommonAppBar({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

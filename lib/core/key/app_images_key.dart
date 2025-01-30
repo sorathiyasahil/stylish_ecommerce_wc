@@ -42,9 +42,16 @@ class AppImagesKey {
   static const String mensLoferShoes = "$_assetsPath/menslofershoes.png";
   static const String muesli = "$_assetsPath/muesli.png";
   static const String hotChocolate = "$_assetsPath/hotChocolate.png";
+  static const String cardApple = "$_assetsPath/apple.png";
+  static const String cardPaypal = "$_assetsPath/paypal.png";
+  static const String cardMaestro = "$_assetsPath/maestro.png";
+  static const String cardVisa = "$_assetsPath/visa.png";
+  static const String success = "$_assetsPath/successfully.png";
 
   ///SVG Images
 
   static const String locationIcon = "$_assetsPathIcon/locationIcons.svg";
   static const String lockIcon = "$_assetsPathIcon/lock.svg";
+  static const String editIcon = "$_assetsPathIcon/edit.svg";
+  static const String coupon = "$_assetsPathIcon/coupon.svg";
 }

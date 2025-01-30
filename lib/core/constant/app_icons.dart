@@ -103,4 +103,22 @@ class AppIcons {
     color: AppColors.backgroundColors,
     size: 20.sp,
   );
+
+  static Icon blackLocationOn = Icon(
+    Icons.location_on_outlined,
+    color: AppColors.backColor,
+    size: 20.sp,
+  );
+  static Icon addCircleOutline = Icon(
+    Icons.add_circle_outline,
+    color: AppColors.backColor,
+    size: 24.sp,
+  );
+
+  static IconData home = Icons.home_outlined;
+  static IconData search = Icons.search;
+  static IconData favorite = Icons.favorite_border;
+  static IconData profile = Icons.person_sharp;
+  static IconData arrowBackIosNew1 = Icons.arrow_back_ios_new;
+  static IconData keyboard_arrow_down = Icons.keyboard_arrow_down;
 }

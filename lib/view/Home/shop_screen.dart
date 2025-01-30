@@ -13,6 +13,7 @@ import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
 import 'package:stylish_ecommerce_wc/core/utils/sized_box_extension.dart';
+import 'package:stylish_ecommerce_wc/view/Home/model/add_to_cart_model.dart';
 
 import '../../core/theme/app_colors.dart';
 
@@ -26,7 +27,7 @@ class ShopScreen extends StatefulWidget {
 }
 
 class _ShopScreenState extends State<ShopScreen> {
-  String? size = " ";
+  String selectedSize = " ";
   int isSelected = 0;
   final PageController _pageController = PageController();
   @override
@@ -94,7 +95,7 @@ class _ShopScreenState extends State<ShopScreen> {
                     style: AppTextStyle.w700(fontSize: 16.sp),
                   ),
                   CommonText(
-                    text: " ${size.toString()}",
+                    text: " ${selectedSize.toString()}",
                     style: AppTextStyle.w700(fontSize: 16.sp),
                   ),
                 ],
@@ -109,7 +110,7 @@ class _ShopScreenState extends State<ShopScreen> {
                       onTap: () {
                         setState(() {
                           isSelected = index;
-                          size = widget.product.size![index].toString();
+                          selectedSize = widget.product.size![index].toString();
                         });
                       },
                       child: Container(
@@ -223,6 +224,31 @@ class _ShopScreenState extends State<ShopScreen> {
               Row(
                 children: [
                   CommonStackButton(
+                    onTap: () {
+                      addtoCart.add(TrendingProductInfo(
+                        title: widget.product.title,
+                        discountPrice: widget.product.discountPrice,
+                        price: widget.product.price,
+                        img: widget.product.img,
+                        description: widget.product.description,
+                        discount: widget.product.discount,
+                        review: widget.product.review,
+                        rating: widget.product.rating,
+                        size: [selectedSize.toString()],
+                      ));
+
+                      // setState(() {
+                      //   Get.toNamed(RoutesName.checkOutScreen, arguments: {
+                      //     "title": widget.product.title.toString(),
+                      //     "images": widget.product.img.toString(),
+                      //     "size": size.toString(),
+                      //     "rating": widget.product.rating,
+                      //     "price": widget.product.price.toString(),
+                      //     "discountPrice": widget.product.discountPrice.toString(),
+                      //     "discount": widget.product.discount.toString(),
+                      //   });
+                      // });
+                    },
                     darkColors: AppColors.darkBlur,
                     lightColors: AppColors.blur,
                     icons: AppIcons.whiteShoppingCartOutlined,

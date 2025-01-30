@@ -1,8 +1,11 @@
+import 'dart:ui';
+
+import 'package:get/get.dart';
 import 'package:stylish_ecommerce_wc/core/key/app_images_key.dart';
 import 'package:stylish_ecommerce_wc/view/Home/product_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/check_out_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/profile_screen.dart';
-import 'package:stylish_ecommerce_wc/view/Home/shop_screen.dart';
+import 'package:stylish_ecommerce_wc/view/Home/wish_list_screen.dart';
 
 import '../../view/Home/home_screen.dart';
 
@@ -17,11 +20,11 @@ class ProductData {
       {this.rating, this.price, this.disCount});
 }
 
-class demo {
-  final String demo1;
-  final String demo2;
+class CardInfo {
+  final String cardLogo;
+  final String cardNumber;
 
-  demo({required this.demo1, required this.demo2});
+  CardInfo({required this.cardNumber, required this.cardLogo});
 }
 
 class ProductInfo {
@@ -44,15 +47,15 @@ class ProductInfo {
 }
 
 class TrendingProductInfo {
-  final String? img;
-  final String? title;
-  final double? discountPrice;
-  final double? price;
-  final String? description;
-  final String? discount;
-  final List? size;
-  final double? review;
-  final int? rating;
+  final String img;
+  final String title;
+  final double discountPrice;
+  final double price;
+  final String description;
+  final String discount;
+  final List size;
+  final double review;
+  final int rating;
 
   TrendingProductInfo(
       {required this.title,
@@ -140,6 +143,13 @@ class AppString {
   ];
 
   static List<String> featuredName = ["Beauty", "Fashion", "Kids", "Mens", "Womens", "123"];
+
+  static List<CardInfo> cardInfo = [
+    CardInfo(cardNumber: "*********2109", cardLogo: AppImagesKey.cardVisa),
+    CardInfo(cardNumber: "*********2109", cardLogo: AppImagesKey.cardPaypal),
+    CardInfo(cardNumber: "*********2109", cardLogo: AppImagesKey.cardMaestro),
+    CardInfo(cardNumber: "*********2109", cardLogo: AppImagesKey.cardApple),
+  ];
 
   static List<ProductInfo> productInfo = [
     ProductInfo(
@@ -428,9 +438,16 @@ class AppString {
   static List screen = [
     const HomeScreen(),
     const ProductScreen(),
-    const CheckOutScreen(),
+    CheckOutScreen(),
+    const WishListScreen(),
     const ProfileScreen(),
   ];
+
+  ///Bottom Nevigation bar name:
+  static const String home = "Home";
+  static const String search = "Search";
+  static const String wishList = "Wishlist";
+  static const String profile = "Profile";
 
   ///singInScreen
   static const String welcome = "Welcome";
@@ -507,4 +524,46 @@ class AppString {
   static const String withInHour = "1 Within Hour";
   static const String similarTo = "Similar To";
   static const String size = "Size:";
+
+  //Profile Screen
+
+  static const String personalDetails = "Personal Details";
+  static const String emailAddress = "Email Address";
+  static const String pinCode = "Pincode";
+  static const String address = "Address";
+  static const String city = "City";
+  static const String state = "State";
+  static const String country = "Country";
+  static const String bankAccountNumber = "Bank Account Number";
+  static const String accountHoldersName = "Account Holder’s Name";
+  static const String iFSCCode = "IFSC Code";
+  static const String save = "Save";
+
+  //Check Out screen
+
+  static const String checkOut = "Checkout";
+
+  ///Shopping Bag
+
+  static const String shoppingBag = "Shopping Bag";
+  static const String applyCoupons = "Apply Coupons";
+  static const String select = "Select";
+  static const String orderPaymentDetails = "Order Payment Details";
+  static const String orderAmounts = "Order Amounts";
+  static const String convenience = "Convenience";
+  static const String deliveryFee = "Delivery Fee";
+  static const String knowMore = "Know More";
+  static const String free = "Free";
+  static const String orderTotal = "Order Total";
+  static const String eMIAvailable = "EMI  Available ";
+  static const String details = "Details ";
+  static const String viewDetails = "View Details";
+
+  static const String order = "Order";
+  static const String shipping = "Shipping";
+  static const String total = "Total";
+  static const String payment = "Payment";
+  static const String continueText = "Continue";
+  static const String paymentDoneSuccessfully = "Payment done successfully.";
+  static const String profileCreateSuccessfully = "Profile Create successfully.";
 }

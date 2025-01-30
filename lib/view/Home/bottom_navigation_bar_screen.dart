@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
@@ -49,16 +50,16 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
             type: BottomNavigationBarType.fixed,
             items: [
               BottomNavigationBarItem(
-                label: "Home",
+                label: AppString.home,
                 icon: Icon(
-                  Icons.home_outlined,
+                  AppIcons.home,
                   color: _selectedIndex == 0 ? AppColors.selectedItemColor : AppColors.backColor,
                 ),
               ),
               BottomNavigationBarItem(
-                label: "Search",
+                label: AppString.search,
                 icon: Icon(
-                  Icons.search,
+                  AppIcons.search,
                   color: _selectedIndex == 1 ? AppColors.selectedItemColor : AppColors.backColor,
                 ),
               ),
@@ -67,16 +68,16 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
                 icon: Icon(null),
               ),
               BottomNavigationBarItem(
-                label: "Wishlist",
+                label: AppString.wishList,
                 icon: Icon(
-                  Icons.favorite_border,
+                  AppIcons.favorite,
                   color: _selectedIndex == 3 ? AppColors.selectedItemColor : AppColors.backColor,
                 ),
               ),
               BottomNavigationBarItem(
-                label: "Setting",
+                label: AppString.profile,
                 icon: Icon(
-                  Icons.settings_outlined,
+                  AppIcons.profile,
                   color: _selectedIndex == 4 ? AppColors.selectedItemColor : AppColors.backColor,
                 ),
               ),

@@ -29,6 +29,10 @@ class AppColors {
   static Color starColors = const Color(0XFFEDB310);
   static Color priceColors = const Color(0XFF808488);
   static Color deliveryTimeBgColor = const Color(0XFFFFCCD5);
+  static Color appBarBorderColor = const Color(0XFFC6C6C6);
+  static Color profileBGColor = const Color(0XFFfdfdfd);
+  static Color shoppingBagBottomColor = const Color(0XFFF8F8F8);
+  static Color cardColor = const Color(0XFFF4F4F4);
 
   static Color transparent = Colors.transparent;
   static const Color blueGrey = Colors.blueGrey;

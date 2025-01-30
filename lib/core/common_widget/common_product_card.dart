@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_rating.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
-import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';

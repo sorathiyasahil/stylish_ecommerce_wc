@@ -6,25 +6,30 @@ import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 
 class CommonButton extends StatelessWidget {
   final String? text;
+  final double? height;
+  final double? widget;
+  final double? radius;
   final void Function()? onTap;
-  const CommonButton({super.key, this.text, this.onTap});
+  final TextStyle? style;
+  const CommonButton(
+      {super.key, this.text, this.onTap, this.height, this.widget, this.style, this.radius});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 55.h,
-        width: 317.w,
+        height: height ?? 55.h,
+        width: widget ?? 317.w,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(radius ?? 4.r),
           color: AppColors.onboardingButtonColor,
         ),
         child: Align(
           alignment: Alignment.center,
           child: CommonText(
             text: text ?? "",
-            style: AppTextStyle.w600(fontSize: 20.sp, color: AppColors.backgroundColors),
+            style: style ?? AppTextStyle.w600(fontSize: 20.sp, color: AppColors.backgroundColors),
           ),
         ),
       ),

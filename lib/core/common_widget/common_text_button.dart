@@ -12,6 +12,7 @@ class CommonTextButton extends StatelessWidget {
   final textDecoration;
   final fontsize;
   final fixedSize;
+  final textalign;
 
   const CommonTextButton({
     super.key,
@@ -21,6 +22,7 @@ class CommonTextButton extends StatelessWidget {
     this.textStyle,
     this.fontsize,
     this.fixedSize,
+    this.textalign,
   });
 
   @override
@@ -29,6 +31,7 @@ class CommonTextButton extends StatelessWidget {
       style: TextButton.styleFrom(fixedSize: fixedSize ?? const Size(100, 50)),
       onPressed: onPressed,
       child: CommonText(
+          textAlign: textalign,
           text: text ?? "",
           style: textStyle ??
               AppTextStyle.w600(

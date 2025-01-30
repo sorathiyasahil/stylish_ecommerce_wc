@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 
 class CommonRating extends StatelessWidget {
