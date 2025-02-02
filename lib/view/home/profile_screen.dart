@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_common/get_reset.dart';
-import 'package:stylish_ecommerce_wc/core/common_widget/common_border_button.dart';
+import 'package:stylish_ecommerce_wc/core/common_widget/Common_dialog.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_button.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
-import 'package:stylish_ecommerce_wc/core/common_widget/common_text_button.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text_form_field.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_validation.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
@@ -66,7 +64,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           decoration: BoxDecoration(
                             color: AppColors.backColor,
                             shape: BoxShape.circle,
-                            image: DecorationImage(image: AssetImage(AppImagesKey.profileImages)),
+                            image: const DecorationImage(
+                                image: AssetImage(AppImagesKey.profileImages)),
                           ),
                         ),
                       ),
@@ -134,7 +133,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                   20.height,
-                  Divider(),
+                  const Divider(),
                   20.height,
                   CommonText(
                     text: "Business Address Details",
@@ -200,7 +199,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     fillColor: AppColors.profileBGColor,
                   ),
                   20.height,
-                  Divider(),
+                  const Divider(),
                   20.height,
                   CommonText(
                     text: "Bank Account Details",
@@ -245,37 +244,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   34.height,
                   CommonButton(
                     onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return Dialog(
-                            backgroundColor: AppColors.priceColors,
-                            child: Container(
-                              height: 210.h,
-                              width: 331.w,
-                              decoration: BoxDecoration(
-                                color: AppColors.backgroundColors,
-                                borderRadius: BorderRadius.circular(6.r),
-                              ),
-                              child: Column(
-                                children: [
-                                  Image(
-                                    image: AssetImage(
-                                      AppImagesKey.success,
-                                    ),
-                                    height: 150,
-                                    width: 150,
-                                  ),
-                                  CommonText(
-                                    text: AppString.profileCreateSuccessfully,
-                                    style: AppTextStyle.w700(fontSize: 14.sp),
-                                  )
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      );
+                      if (_formKey.currentState!.validate()) {
+                        CommonDialog.showCustomDialog(
+                          context: context,
+                          imageAsset: AppImagesKey.success,
+                          message: AppString.profileCreateSuccessfully,
+                        );
+                      }
                     },
                     text: AppString.save,
                   ),

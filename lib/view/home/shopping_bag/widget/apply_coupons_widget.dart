@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_common/get_reset.dart';
-import 'package:stylish_ecommerce_wc/core/common_widget/common_border_button.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';

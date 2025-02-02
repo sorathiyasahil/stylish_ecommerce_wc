@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_common/get_reset.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_button.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
+import 'package:stylish_ecommerce_wc/core/routes/routes_name.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 
 class PaymentDetailsAndButtonWidget extends StatelessWidget {
-  const PaymentDetailsAndButtonWidget({super.key});
+  final String price;
+  const PaymentDetailsAndButtonWidget({super.key, required this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class PaymentDetailsAndButtonWidget extends StatelessWidget {
                 children: [
                   CommonText(
                     textAlign: TextAlign.start,
-                    text: "${AppString.rupeesLogo} 7000.00",
+                    text: "${AppString.rupeesLogo} $price",
                     style: AppTextStyle.w600(
                       color: AppColors.backColor,
                       fontSize: 16.sp,
@@ -56,9 +57,12 @@ class PaymentDetailsAndButtonWidget extends StatelessWidget {
                 ],
               ),
               CommonButton(
+                onTap: () {
+                  Get.toNamed(RoutesName.shippingScreen, arguments: price);
+                },
                 widget: 219.w,
                 height: 48.h,
-                text: "Proceed to Payment",
+                text: AppString.proceedToPayment,
                 style: AppTextStyle.w600(fontSize: 17.sp, color: AppColors.backgroundColors),
               )
             ],

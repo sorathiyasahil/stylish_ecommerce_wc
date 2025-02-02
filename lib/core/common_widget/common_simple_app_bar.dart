@@ -10,15 +10,23 @@ class CommonSimpleAppBar extends StatelessWidget implements PreferredSizeWidget 
   final String? title;
   final IconData? action;
   final Color? borderColor;
+  final void Function()? actionOnPressed;
+  final void Function()? leadingOnPressed;
   const CommonSimpleAppBar(
-      {super.key, this.leading, this.title, this.action, required this.borderColor});
+      {super.key,
+      this.leading,
+      this.title,
+      this.action,
+      this.borderColor,
+      this.actionOnPressed,
+      this.leadingOnPressed});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       shape: Border.all(color: borderColor ?? AppColors.transparent),
       backgroundColor: AppColors.homeBGColors,
-      leading: Icon(leading ?? Icons.add),
+      leading: IconButton(onPressed: leadingOnPressed, icon: Icon(leading ?? Icons.add)),
       centerTitle: true,
       leadingWidth: 60,
       title: CommonText(
@@ -28,7 +36,10 @@ class CommonSimpleAppBar extends StatelessWidget implements PreferredSizeWidget 
           color: AppColors.backColor,
         ),
       ),
-      actions: [Icon(action).paddingSymmetric(horizontal: 10.h)],
+      actions: [
+        IconButton(
+            onPressed: actionOnPressed, icon: Icon(action).paddingSymmetric(horizontal: 10.h))
+      ],
     );
   }
 

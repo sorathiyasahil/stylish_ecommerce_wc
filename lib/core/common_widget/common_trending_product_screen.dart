@@ -59,7 +59,7 @@ class CommonTrendingProductScreen extends StatelessWidget {
                     height: 200.h,
                     width: 163.w,
                     decoration: BoxDecoration(
-                      color: Colors.green,
+                      color: AppColors.backgroundColors,
                       borderRadius: BorderRadius.circular(5.r),
                       image: DecorationImage(
                         image: AssetImage(productImages!),

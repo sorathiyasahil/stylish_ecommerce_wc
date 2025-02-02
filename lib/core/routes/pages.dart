@@ -15,6 +15,7 @@ import 'package:stylish_ecommerce_wc/view/auth/onboarding_screen.dart';
 import 'package:stylish_ecommerce_wc/view/auth/sign_in_screen.dart';
 import 'package:stylish_ecommerce_wc/view/auth/sign_up_screen.dart';
 import 'package:stylish_ecommerce_wc/view/auth/splash_screen.dart';
+import 'package:stylish_ecommerce_wc/view/home/google%20map/google_map_screen.dart';
 
 class AppPages {
   static List<GetPage> pages = [
@@ -68,17 +69,25 @@ class AppPages {
     ),
     GetPage(
       name: RoutesName.shoppingBeg,
-      page: () => const ShoppingBagScreen(),
+      page: () => ShoppingBagScreen(
+        productData: Get.arguments,
+      ),
     ),
     GetPage(
       name: RoutesName.shippingScreen,
-      page: () => const ShippingScreen(),
+      page: () => ShippingScreen(
+        productInfo: Get.arguments,
+      ),
     ),
     GetPage(
       name: RoutesName.shopScreen,
       page: () => ShopScreen(
         product: Get.arguments,
       ),
+    ),
+    GetPage(
+      name: RoutesName.googleMapScreen,
+      page: () => GoogleMapScreen(),
     ),
   ];
 }

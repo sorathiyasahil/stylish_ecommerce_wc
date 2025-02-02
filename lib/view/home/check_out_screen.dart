@@ -3,11 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_rating.dart';
+import 'package:stylish_ecommerce_wc/core/common_widget/common_simple_app_bar.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
 import 'package:stylish_ecommerce_wc/core/key/app_images_key.dart';
+import 'package:stylish_ecommerce_wc/core/routes/routes_name.dart';
 import 'package:stylish_ecommerce_wc/core/theme/app_colors.dart';
 import 'package:stylish_ecommerce_wc/core/utils/sized_box_extension.dart';
 import 'package:stylish_ecommerce_wc/view/Home/model/add_to_cart_model.dart';
@@ -25,15 +27,13 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // shape: Border(bottom: BorderSide(color: AppColors.appBarBorderColor, width: 1.w)),
-        backgroundColor: AppColors.profileBGColor,
-        leading: AppIcons.arrowBackIosNew,
-        centerTitle: true,
-        title: CommonText(
-          text: AppString.checkOut,
-          style: AppTextStyle.w600(color: AppColors.backColor, fontSize: 16.sp),
-        ),
+      appBar: CommonSimpleAppBar(
+        leadingOnPressed: () {
+          Get.back();
+        },
+        borderColor: AppColors.transparent,
+        title: AppString.checkOut,
+        leading: AppIcons.arrowBackIosNew1,
       ),
       backgroundColor: AppColors.homeBGColors,
       body: SingleChildScrollView(
@@ -47,7 +47,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 AppIcons.blackLocationOn,
                 4.width,
                 CommonText(
-                  text: "Delivery Address",
+                  text: AppString.deliveryAddress,
                   style: AppTextStyle.w700(
                     fontSize: 14.sp,
                   ),
@@ -76,12 +76,12 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CommonText(
-                            text: "Address:",
+                            text: "${AppString.address}:",
                             style: AppTextStyle.w600(fontSize: 12.sp),
                           ),
                           CommonText(
                             textAlign: TextAlign.start,
-                            text: "216 St Paul's Rd, London N1 2LL, UK Contact :  +44-784232:",
+                            text: AppString.userAddress,
                             style: AppTextStyle.w500(fontSize: 12.sp),
                           ),
                         ],
@@ -118,17 +118,20 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
             ),
             24.height,
             CommonText(
-              text: "Shopping List",
+              text: AppString.shoppingList,
               style: AppTextStyle.w700(fontSize: 14.sp),
             ),
             ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: addtoCart.length,
               itemBuilder: (context, index) {
+                final productData = addtoCart[index];
                 int ratingValue = addtoCart[index].rating;
                 return GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(RoutesName.shoppingBeg, arguments: productData);
+                  },
                   child: Container(
                     height: 191.h,
                     width: 331.w,
@@ -245,12 +248,12 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                             ),
                           ],
                         ),
-                        Divider(),
+                        const Divider(),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             CommonText(
-                              text: "Total Order:",
+                              text: AppString.totalOrder,
                               style: AppTextStyle.w700(fontSize: 12.sp),
                             ),
                             CommonText(

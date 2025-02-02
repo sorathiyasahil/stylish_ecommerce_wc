@@ -11,7 +11,11 @@ import 'package:stylish_ecommerce_wc/view/Home/shipping/widget/card_information_
 import 'package:stylish_ecommerce_wc/view/Home/shipping/widget/item_total_widget.dart';
 
 class ShippingScreen extends StatefulWidget {
-  const ShippingScreen({super.key});
+  final String productInfo;
+  const ShippingScreen({
+    super.key,
+    required this.productInfo,
+  });
 
   @override
   State<ShippingScreen> createState() => _ShippingScreenState();
@@ -31,7 +35,9 @@ class _ShippingScreenState extends State<ShippingScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           17.height,
-          const ItemTotalWidget(),
+          ItemTotalWidget(
+            price: widget.productInfo.toString(),
+          ),
           22.height,
           const Divider().paddingOnly(left: 42.h, right: 24.w),
           22.height,

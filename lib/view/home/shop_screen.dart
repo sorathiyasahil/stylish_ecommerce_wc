@@ -5,6 +5,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_border_shop_button.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_product_card.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_rating.dart';
+import 'package:stylish_ecommerce_wc/core/common_widget/common_simple_app_bar.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_simple_border_button.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_sort_button.dart';
 import 'package:stylish_ecommerce_wc/core/common_widget/common_stack_button.dart';
@@ -12,6 +13,7 @@ import 'package:stylish_ecommerce_wc/core/common_widget/common_text.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_icons.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_string.dart';
 import 'package:stylish_ecommerce_wc/core/constant/app_text_style.dart';
+import 'package:stylish_ecommerce_wc/core/routes/routes_name.dart';
 import 'package:stylish_ecommerce_wc/core/utils/sized_box_extension.dart';
 import 'package:stylish_ecommerce_wc/view/Home/model/add_to_cart_model.dart';
 
@@ -29,26 +31,24 @@ class ShopScreen extends StatefulWidget {
 class _ShopScreenState extends State<ShopScreen> {
   String selectedSize = " ";
   int isSelected = 0;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    selectedSize = widget.product.size[isSelected].toString();
+  }
+
   final PageController _pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.homeBGColors,
-      appBar: AppBar(
-        backgroundColor: AppColors.homeBGColors,
-        leading: AppIcons.arrowBackIosNew,
-        actions: [
-          Container(
-            decoration: BoxDecoration(
-              color: AppColors.getStartedSubtitleColor,
-              shape: BoxShape.circle,
-            ),
-            child: IconButton(
-              onPressed: () {},
-              icon: AppIcons.shopping_cart_outlined,
-            ),
-          ).paddingOnly(right: 15),
-        ],
+      appBar: CommonSimpleAppBar(
+        leadingOnPressed: () {
+          Get.back();
+        },
+        leading: AppIcons.arrowBackIosNew1,
+        action: AppIcons.shoppingCartOutlined1,
       ),
       body: ListView(
         children: [
@@ -70,7 +70,7 @@ class _ShopScreenState extends State<ShopScreen> {
                             color: Colors.green,
                             borderRadius: BorderRadius.circular(16.r),
                             image: DecorationImage(
-                                image: AssetImage(widget.product.img ?? ""), fit: BoxFit.cover)),
+                                image: AssetImage(widget.product.img), fit: BoxFit.cover)),
                       ).paddingSymmetric(horizontal: 5);
                     },
                   ),
@@ -104,13 +104,13 @@ class _ShopScreenState extends State<ShopScreen> {
                 height: 32.h,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: widget.product.size!.length,
+                  itemCount: widget.product.size.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
                         setState(() {
                           isSelected = index;
-                          selectedSize = widget.product.size![index].toString();
+                          selectedSize = widget.product.size[index].toString();
                         });
                       },
                       child: Container(
@@ -124,7 +124,7 @@ class _ShopScreenState extends State<ShopScreen> {
                             border: Border.all(color: AppColors.callToActionButtonColors)),
                         child: Center(
                           child: CommonText(
-                            text: "${widget.product.size![index]}",
+                            text: "${widget.product.size[index]}",
                             style: AppTextStyle.w700(
                               color: isSelected == index
                                   ? AppColors.backgroundColors
@@ -236,6 +236,7 @@ class _ShopScreenState extends State<ShopScreen> {
                         rating: widget.product.rating,
                         size: [selectedSize.toString()],
                       ));
+                      Get.toNamed(RoutesName.checkOutScreen);
 
                       // setState(() {
                       //   Get.toNamed(RoutesName.checkOutScreen, arguments: {

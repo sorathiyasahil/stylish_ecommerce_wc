@@ -8,17 +8,17 @@ import '../theme/app_colors.dart';
 import 'common_text.dart';
 
 class CommonBorderButton extends StatelessWidget {
-  final text;
+  final String? text;
   final Color? borderColor;
   final Color? textColor;
-  final bgColor;
+  final Color? bgColor;
   const CommonBorderButton({super.key, this.text, this.borderColor, this.textColor, this.bgColor});
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-          backgroundColor: bgColor,
+          backgroundColor: bgColor ?? AppColors.transparent,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(6.r),
               side: BorderSide(
@@ -29,7 +29,7 @@ class CommonBorderButton extends StatelessWidget {
       child: Row(
         children: [
           CommonText(
-            text: text,
+            text: text ?? "",
             style:
                 AppTextStyle.w600(color: textColor ?? AppColors.backgroundColors, fontSize: 12.sp),
           ),

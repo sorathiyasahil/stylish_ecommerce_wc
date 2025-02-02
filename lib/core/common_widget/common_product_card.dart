@@ -53,7 +53,7 @@ class CommonProductCard extends StatelessWidget {
             height: imagesHeight ?? 124.h,
             width: imagesWidth ?? 170.w,
             decoration: BoxDecoration(
-              color: Colors.green,
+              color: AppColors.backgroundColors,
               borderRadius: BorderRadius.circular(6.r),
               image: DecorationImage(
                 image: AssetImage(productImages!),

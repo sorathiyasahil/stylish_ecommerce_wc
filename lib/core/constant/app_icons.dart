@@ -121,4 +121,5 @@ class AppIcons {
   static IconData profile = Icons.person_sharp;
   static IconData arrowBackIosNew1 = Icons.arrow_back_ios_new;
   static IconData keyboard_arrow_down = Icons.keyboard_arrow_down;
+  static IconData shoppingCartOutlined1 = Icons.shopping_cart_outlined;
 }

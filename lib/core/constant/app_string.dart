@@ -1,6 +1,3 @@
-import 'dart:ui';
-
-import 'package:get/get.dart';
 import 'package:stylish_ecommerce_wc/core/key/app_images_key.dart';
 import 'package:stylish_ecommerce_wc/view/Home/product_screen.dart';
 import 'package:stylish_ecommerce_wc/view/Home/check_out_screen.dart';
@@ -566,4 +563,11 @@ class AppString {
   static const String continueText = "Continue";
   static const String paymentDoneSuccessfully = "Payment done successfully.";
   static const String profileCreateSuccessfully = "Profile Create successfully.";
+  static const String shoppingList = "Shopping List";
+  static const String totalOrder = "Total Order:";
+  static const String userAddress = "216 St Paul's Rd, London N1 2LL, UK Contact :  +44-784232:";
+  static const String deliveryAddress = "Delivery Address";
+  static const String deliveryBy = "Delivery by ";
+  static const String deliveryDate = "10 May 2XXX";
+  static const String proceedToPayment = "Proceed to Payment";
 }
